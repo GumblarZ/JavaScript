@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Clock</title>
+</head>
+<body>
+	<div class="main">
+		<h1>Clock</h1>
+		<input type="text" 
+		id="time" 
+		readonly 
+		style="
+		text-align: center;
+		color: #696969;
+		font-weight: initial;
+		font-size: 30px;
+		width: 150px;
+		">
+	</div>
+</body>
+</html>
+
+
+
+<script>
+	function clock(){
+		var data = new Date();
+		var hora = data.getHours();
+		var minuto = data.getMinutes();
+		var segundo = data.getSeconds();
+
+		if (hora < 10) {
+			hora = "0" + hora;
+		}
+		if (minuto < 10) {
+			minuto = "0" + minuto;
+		}
+		if (segundo < 10) {
+			segundo = "0" + segundo;
+		}
+
+		var timeNow = hora + ":" + minuto + ":" + segundo;
+		document.getElementById("time").value = timeNow;
+	}
+
+	var tempo = setInterval(clock,1000);
+</script>
+
+
