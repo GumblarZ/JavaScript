@@ -1,28 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Clock</title>
+	<title>Relogio</title>
 </head>
-<body>
-	<div class="main">
-		<h1>Clock</h1>
-		<input type="text" 
-		id="time" 
-		readonly 
-		style="
-		text-align: center;
-		color: #696969;
-		font-weight: initial;
-		font-size: 30px;
-		width: 150px;
-		">
-	</div>
-</body>
-</html>
 
-
-
-<script>
+<script type="text/javascript">
 	function clock(){
 		var data = new Date();
 		var hora = data.getHours();
@@ -39,11 +21,48 @@
 			segundo = "0" + segundo;
 		}
 
-		var timeNow = hora + ":" + minuto + ":" + segundo;
-		document.getElementById("time").value = timeNow;
+		document.getElementById("hora").value = hora;
+		document.getElementById("minuto").value = ":" + minuto;
+		document.getElementById("segundo").value = segundo;
 	}
 
-	var tempo = setInterval(clock,1000);
+	setInterval(clock,1000);
 </script>
 
+<style type="text/css">
+	#hora{
+		border-style: none; 
+		text-align: center;
+		color: #696969;
+		font-weight: initial;
+		font-size: 90px;
+		width: 100px;
+	}
+	#minuto{
+		border-style: none;
+		text-align: center;
+		color: #696969;
+		font-weight: initial;
+		font-size: 60px;
+		width: 90px;
+	}	
+	#segundo{
+		border-style: none;
+		text-align: center;
+		color: #696969;
+		font-weight: initial;
+		font-size: 30px;
+		width: 35px;
+	}
+</style>
+
+<body>
+	<div class="main">
+		<h1>relogio</h1>
+		<input type="text" id="hora" readonly>
+		<input type="text" id="minuto" readonly>
+		<input type="text" id="segundo" readonly>
+	</div>
+</body>
+</html>
 
